@@ -2,10 +2,11 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  background-image: url(gymbg.jpeg);
-  background-size: 100vw 100vh;
-  background-repeat: repeat-y;
+  background-image: url('gymbg.jpeg');
+  background-size: cover;           
+  background-position: center;      
+  background-repeat: no-repeat;    
+  background-attachment: fixed; 
 }
 
 header {
@@ -52,6 +53,31 @@ p {
   color: rgb(0, 0, 0);
   font-weight: bolder;
 }
+/* Shared styling for all images */
+img {
+  display: inline-block;
+  margin: 8px;
+  border: 2px solid rgb(255, 0, 140);
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-width: 100%;
+  height: auto;
+}
+.imgt {
+  width: 60px;
+  height: 60px;
+}
+.img {
+  width: 150px;
+  height: auto;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  z-index: 10;
+}
+
 
 form label {
   display: block;
@@ -131,4 +157,23 @@ form input[type="submit"] {
 }
 .topsec {
   margin-top: 350px;
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .package {
+    font-size: 0.95rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
 }
